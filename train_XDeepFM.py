@@ -24,7 +24,7 @@ BATCH_SIZE_SYNTHETIC = 128
 BATCH_SIZE_CRITEO = 4096
 RANDOM_SEED = SEED  # Set to None for non-deterministic result
 
-data_path = "data/xdeepfmresources"
+data_path = "recommender_hw/data/xdeepfmresources"
 yaml_file = os.path.join(data_path, r'xDeepFM.yaml')
 train_file = os.path.join(data_path, r'synthetic_part_0')
 valid_file = os.path.join(data_path, r'synthetic_part_1')
@@ -87,11 +87,13 @@ def criteo():
                               use_CIN_part=True,
                               use_DNN_part=True)
 
-    data_path1 = "./data/train_data"
-    train_file = os.path.join(data_path1, r'train_data.txt')
+    data_path1 = "recommender_hw/data/train_data"
+    train_file = os.path.join(data_path1, r'train_data')
+    test_file = os.path.join(data_path1, r'test_data')
+    valid_file = os.path.join(data_path1, r'valid_data')
     # train_file = os.path.join(data_path, r'cretio_tiny_train')
-    valid_file = os.path.join(data_path, r'cretio_tiny_valid')
-    test_file = os.path.join(data_path, r'cretio_tiny_test')
+    # valid_file = os.path.join(data_path, r'cretio_tiny_valid')
+    # test_file = os.path.join(data_path, r'cretio_tiny_test')
 
     # designate a data iterator for the model
     input_creator = FFMTextIterator
