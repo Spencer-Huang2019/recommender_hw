@@ -87,7 +87,9 @@ def criteo():
                               use_CIN_part=True,
                               use_DNN_part=True)
 
-    train_file = os.path.join(data_path, r'cretio_tiny_train')
+    data_path1 = "./data/train_data"
+    train_file = os.path.join(data_path1, r'train_data.txt')
+    # train_file = os.path.join(data_path, r'cretio_tiny_train')
     valid_file = os.path.join(data_path, r'cretio_tiny_valid')
     test_file = os.path.join(data_path, r'cretio_tiny_test')
 

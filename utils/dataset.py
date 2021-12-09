@@ -2,9 +2,9 @@ import numpy as np
 import random
 import hashlib
 
-def sampling(train_file, out_f, n_samples):
+
+def data_process(train_file, out_f, n_samples):
     """
-    对用户和电影进行随机抽样
     :param train_file: train_1m.txt
     :param n_samples: 抽样数量
     :return: 返回抽样后的数据集
@@ -50,10 +50,14 @@ def sampling(train_file, out_f, n_samples):
 
 
 def de_hash(str, nr_bins=6000):
-    return int(hashlib.md5(str.encode('utf8')).hexdigest(), 16)%(nr_bins-1)+1
+    return int(hashlib.md5(str.encode('utf8')).hexdigest(), 16) % (nr_bins-1)+1
 
 
 if __name__ == '__main__':
     origin_file = "../data/train_data/train_1m.txt"
-    out_file = "../data/train_data/train_data"
-    sampling(origin_file, out_file, 200000)
+    # out_file1 = "../data/train_data/train_data"
+    # data_process(origin_file, out_file, 200000)
+    out_file2 = "../data/train_data/test_data"
+    data_process(origin_file, out_file2, 10000)
+    out_file3 = "../data/train_data/valid_data"
+    data_process(origin_file, out_file3, 5000)
